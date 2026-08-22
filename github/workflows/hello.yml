@@ -1,0 +1,21 @@
+name: My First Automation
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+      - name: Say hello
+        run: echo "Hello! My first GitHub Action is running."
+      - name: Show the date and time
+        run: date
+      - name: Show who triggered this
+        run: echo "Triggered by ${{ github.actor }}"
+      - name: List all files in the repository
+        run: ls -la
+      - name: Count lines in the README
+        run: wc -l README.md
