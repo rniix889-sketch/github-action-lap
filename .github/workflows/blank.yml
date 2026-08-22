@@ -1,13 +1,10 @@
-name: My First Automation
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
+name: CI
+
+on: [push, workflow_dispatch]
+
 jobs:
-  greet:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repository
-        uses: actions/checkout@v4
-      - name: Say hello
-        run: echo "Hello! My first GitHub Action is running."
+      - uses: actions/checkout@v3
+      - run: echo "Hello World"
