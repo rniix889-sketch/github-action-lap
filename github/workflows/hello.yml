@@ -1,4 +1,4 @@
- name: My First Automationn
+ name: My First Automation
 on:
   push:
     branches: [ main ]
